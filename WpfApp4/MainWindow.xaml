@@ -1,0 +1,69 @@
+﻿<Window x:Class="WpfApp4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" WindowState="Maximized" WindowStyle="ToolWindow">
+    <TabControl>
+        <TabItem Header="Paint">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <DockPanel Grid.Row="0">
+                    <Menu DockPanel.Dock="Top">
+                        <MenuItem Header="File">
+                            <MenuItem Header="Open" Click="FileOpen"></MenuItem>
+                            <MenuItem Header="Driver" Click="Driver"></MenuItem>
+                            <MenuItem Header="From Machine" Click="Machine"></MenuItem>
+                            <MenuItem Header="Save" Click="SaveImage"></MenuItem>
+                            <MenuItem Header="Exit" Click="ExitProgram"></MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="W/out library">
+                            <MenuItem Header="LowPass"></MenuItem>
+                            <MenuItem Header="HighPass"></MenuItem>
+                            <MenuItem Header="Morphological">
+                                <MenuItem Header="Erode" Click="ErodeFilter"></MenuItem>
+                                <MenuItem Header="Dilation" Click="DilationFilter"></MenuItem>
+                                <MenuItem Header="Opening" Click="OpeningFilter"></MenuItem>
+                                <MenuItem Header="Closing" Click="ClosingFilter"></MenuItem>
+                            </MenuItem>
+                            <MenuItem Header="Binarization"></MenuItem>
+                            <MenuItem Header="Thinning"></MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="With library">
+                            <MenuItem Header="LowPass"></MenuItem>
+                            <MenuItem Header="HighPass"></MenuItem>
+                            <MenuItem Header="Morphological">
+                                <MenuItem Header="Erode" Click="ErodeFilter"></MenuItem>
+                                <MenuItem Header="Dilation" Click="DilationFilter"></MenuItem>
+                                <MenuItem Header="Opening" Click="OpeningFilter"></MenuItem>
+                                <MenuItem Header="Closing" Click="ClosingFilter"></MenuItem>
+                            </MenuItem>
+                        </MenuItem>
+                    </Menu>
+
+                </DockPanel>
+
+                <Image Grid.Column="0" Grid.Row="1" Stretch="Fill" Name="actual"/>
+                <Image Grid.Column="1" Grid.Row="1" Stretch="Fill" Name="lookup"/>
+
+            </Grid>
+                
+        </TabItem>
+        <TabItem Header="Database">
+            
+        </TabItem>
+        <TabItem Header="Veryfication">
+
+        </TabItem>
+    </TabControl>
+    
+</Window>
